@@ -25,11 +25,11 @@ on:
         required: false
         default: true
         type: boolean
-  # Scheduling intentionally left off until the build is proven faster
-  # than the from-source HIP build (see local-ai/benchmarks.md). To
-  # enable a nightly cadence after that, uncomment:
-  # schedule:
-  #   - cron: '0 14 * * *'   # 1h after Lemonade's 13:00 UTC build
+  # Nightly cadence — enabled 2026-05-15 after benchmarking confirmed the
+  # patched build is +6-7% prefill over stock Lemonade at both single-stream
+  # configs we run (peak/deployed). Bench: homelab/local-ai/benchmarks.md.
+  schedule:
+    - cron: '0 14 * * *'   # 1h after Lemonade's 13:00 UTC build
 
 jobs:
   build-ubuntu:
